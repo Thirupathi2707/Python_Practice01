@@ -246,3 +246,30 @@ def digit_sum(n):
     return total
 
 print(digit_sum(12345))
+
+
+#divisible by both 3 and 5
+
+def divisible_by_3_and_5(numbers):
+    result = []
+
+    for n in numbers:
+        if n % 3 == 0 and n % 5 == 0:
+            result.append(n)
+
+    return result
+
+print(divisible_by_3_and_5([10, 15, 20, 30, 45, 50]))
+
+#counting occurences of an element
+
+def count_element(numbers, target):
+    count = 0
+
+    for n in numbers:
+        if n == target:
+            count += 1
+
+    return count
+
+print(count_element([10, 20, 10, 30, 10], 10))
