@@ -208,3 +208,41 @@ from functools import reduce
 numbers = [10, 20, 30, 40]
 result = reduce(lambda x,y:x+y, numbers )
 print(result)
+
+
+#largest of three
+def largest(a, b, c):
+    if a >= b and a >= c:
+        return a
+    elif b >= a and b >= c:
+        return b
+    else:
+        return c
+
+print(largest(10, 25, 15))
+
+#prime number
+def is_prime(n):
+    if n < 2:
+        return False
+
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+
+    return True
+
+print(is_prime(17))
+
+#sum of the digits
+def digit_sum(n):
+    total = 0
+
+    while n > 0:
+        digit = n % 10
+        total += digit
+        n //= 10
+
+    return total
+
+print(digit_sum(12345))
