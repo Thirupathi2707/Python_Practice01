@@ -273,3 +273,55 @@ def count_element(numbers, target):
     return count
 
 print(count_element([10, 20, 10, 30, 10], 10))
+
+
+
+def remove_spaces(text):
+    result = ""
+
+    for char in text:
+        if char != " ":
+            result += char
+
+    return result
+
+
+print(remove_spaces("Hello World Python"))
+
+def capitalize_words(text):
+    words = text.split()
+    result = ""
+
+    for word in words:
+        result += word[0].upper() + word[1:] + " "
+
+    return result.strip()
+
+
+print(capitalize_words("hello world python"))
+
+def count_characters(text):
+    uppercase = 0
+    lowercase = 0
+    digits = 0
+    special = 0
+
+    for char in text:
+        if char.isupper():
+            uppercase += 1
+        elif char.islower():
+            lowercase += 1
+        elif char.isdigit():
+            digits += 1
+        else:
+            special += 1
+
+    return uppercase, lowercase, digits, special
+
+
+u, l, d, s = count_characters("Hello@123!")
+
+print("Uppercase:", u)
+print("Lowercase:", l)
+print("Digits:", d)
+print("Special:", s)
