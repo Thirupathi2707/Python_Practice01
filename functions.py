@@ -1,327 +1,48 @@
-#Sum of two numbers
-
-def add(a,b):
-    return  a+b;
-
-print(add(10,20))
-
-#even or odd
-
-def evenorodd(a):
-    if a%2 == 0:
-        print("Even")
-    else:
-        print("odd")
-
-evenorodd(7)
-
-#square
-
-def square(s):
-    return s*s;
-
-print(square(5))
-
-#maximum()
-
-def max(c,d):
-    if c>d :
-       print("c")
-    else:
-       print("d") 
-
-max(10,25)
-
-#vowels in a string
-
-def vowels(st):
-    c = 0
-    for i in range(0,len(st)):
-        if st[i] == 'a' or  st[i] == 'e' or st[i] == 'i' or st[i] == 'o' or st[i] == 'u':
-         c+=1
-    return c
-        
-    
-print(vowels("hello"))
-
-#reverse a string
-
-def r(e):
-    rev = ""
-    for i in range(len(e)-1,-1,-1):
-        rev += e[i]  
-    return rev
-
-print(r("Python"))
-
-#palindrome
-
-def p(pal):
-    palin = ""
-    for i in range(len(pal)-1,-1,-1):
-        palin += pal[i]
-   
-   
-    if palin == pal:
-         return True
-
-    else:
-         return False
-    
-print(p("madam"))
-
-#sum
-
-def sum():
-    n = [10,20,30,40]
-    sum = 0
-
-    for i in range(0,len(n)):
-        sum += n[i]
-    return sum
-
-print(sum())
-
-#even or odd
-
-def EorO():
-    l = [1,2,3,4,5,6]
-    e = 0
-    o = 0
-
-    for i in range(0,len(l)):
-
-        if l[i]%2 == 0:
-            e += 1
-            print("Even: ",e)
-        else:
-            o += 1
-            print("Odd: ",o)
-
-EorO()
-
-#largest number
-def large():
-    m = [10,45,7,89,23]
-    h = m[0]
-
-    for i in range(len(m)):
-        if m[i] > h :
-           h = m[i]
-    return h
-
-print(large())
-
-#duplicate
-
-def dup():
-    a = [10,20,10,30,20,40]
-    
-    for i in range(len(a)):
-        for j in range(i+1,len(a)):
-            if a[i] == a[j]:
-                a.pop(j)
-                break
-    return a
-
-print(dup())
-
-#count
-
-def c():
-    numbers = [1,2,2,3,4,3]
-    e = int(input("Enter a number:  "))
-    total = 0
-    for i in range(len(numbers)):
-        if numbers[i] == e:
-            total += 1
-    return total
-                  
-print(c())
-
-#second largest
-
-def sl():
-    num = [10, 25, 7, 45, 18]
-    hs = num[0]
-    for i in range(len(num)):
-        if num[i] > hs:
-           larges = hs
-           hs = num[i] 
-           
-    return larges
-
-print(sl())
-
-# even and odd separate
-
-def evenorod():
-    nums = [1, 2, 3, 4, 5, 6]
-    g = []
-    h = []
-    for i in range(len(nums)):
-        if nums[i]%2 == 0:            
-           g.append(nums[i])
-        else:
-            h.append(nums[i])
-    print("Even:  ",g)
-    print("Odd:  ",h)
-
-evenorod()
-
-#common
-
-def common(): 
-    a = [1, 2, 3, 4]
-    b = [3, 4, 5, 6]
-    c = []
-    for i in range(len(a)):
-        for j in range(len(b)):
-            if a[i] == b[j]:
-                c.append(b[j])
-                
-    print("common elements:  ",c)
-    
-common()
-
-#double numbers
-
-def double():
-    numbers = [1, 2, 3, 4, 5]
-    result = list(map(lambda n:n+n, numbers))
-    print(result)
-
-double()
-
-#square
-numbers = [2, 3, 4, 5]
-result = list(map(lambda n: n*n, numbers))
-print(result)
-
-#even
-numbers = [1, 2, 3, 4, 5, 6, 7, 8]
-result = list(filter(lambda n: n%2==0,numbers))
-print(result)
-
-#total
-from functools import reduce
-numbers = [10, 20, 30, 40]
-result = reduce(lambda x,y:x+y, numbers )
-print(result)
-
-
-#largest of three
-def largest(a, b, c):
-    if a >= b and a >= c:
-        return a
-    elif b >= a and b >= c:
-        return b
-    else:
-        return c
-
-print(largest(10, 25, 15))
-
-#prime number
-def is_prime(n):
-    if n < 2:
-        return False
-
-    for i in range(2, n):
-        if n % i == 0:
-            return False
-
-    return True
-
-print(is_prime(17))
-
-#sum of the digits
-def digit_sum(n):
-    total = 0
-
-    while n > 0:
-        digit = n % 10
-        total += digit
-        n //= 10
-
-    return total
-
-print(digit_sum(12345))
-
-
-#divisible by both 3 and 5
-
-def divisible_by_3_and_5(numbers):
-    result = []
-
-    for n in numbers:
-        if n % 3 == 0 and n % 5 == 0:
-            result.append(n)
-
-    return result
-
-print(divisible_by_3_and_5([10, 15, 20, 30, 45, 50]))
-
-#counting occurences of an element
-
-def count_element(numbers, target):
+def count_vowels(s):
     count = 0
 
-    for n in numbers:
-        if n == target:
+    for ch in s.lower():
+        if ch in "aeiou":
             count += 1
 
     return count
 
-print(count_element([10, 20, 10, 30, 10], 10))
+print(count_vowels("Education"))
+
+def largest(numbers):
+    largest = numbers[0]
+
+    for num in numbers:
+        if num > largest:
+            largest = num
+
+    return largest
+
+print(largest([10, 25, 7, 40, 18]))
+
+def second_largest(numbers):
+    largest = numbers[0]
+    second = None
+
+    for num in numbers:
+        if num > largest:
+            second = largest
+            largest = num
+        elif num != largest and (second is None or num > second):
+            second = num
+
+    return second
+
+print(second_largest([10, 25, 7, 40, 18]))
 
 
+def remove_duplicates(numbers):
+    result = []
 
-def remove_spaces(text):
-    result = ""
-
-    for char in text:
-        if char != " ":
-            result += char
+    for num in numbers:
+        if num not in result:
+            result.append(num)
 
     return result
 
-
-print(remove_spaces("Hello World Python"))
-
-def capitalize_words(text):
-    words = text.split()
-    result = ""
-
-    for word in words:
-        result += word[0].upper() + word[1:] + " "
-
-    return result.strip()
-
-
-print(capitalize_words("hello world python"))
-
-def count_characters(text):
-    uppercase = 0
-    lowercase = 0
-    digits = 0
-    special = 0
-
-    for char in text:
-        if char.isupper():
-            uppercase += 1
-        elif char.islower():
-            lowercase += 1
-        elif char.isdigit():
-            digits += 1
-        else:
-            special += 1
-
-    return uppercase, lowercase, digits, special
-
-
-u, l, d, s = count_characters("Hello@123!")
-
-print("Uppercase:", u)
-print("Lowercase:", l)
-print("Digits:", d)
-print("Special:", s)
+print(remove_duplicates([1, 2, 2, 3, 1, 4]))
